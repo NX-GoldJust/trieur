@@ -50,7 +50,7 @@ for c in restant:
                 pass
     else:
         if not os.path.exists("Autres/"+c) and os.path.basename(__file__) != c:
-            shutil.copyfile(c, "Autres")
+            shutil.copyfile(c, "Autres/"+c)
             os.remove(c)
         
 
