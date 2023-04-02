@@ -5,7 +5,7 @@ import os, shutil
 
 img = ["png", "jpeg", "jpg", "webp", "bmp", "tif", "svg", "ico"]
 
-video = ["mkv", "mp4", "avi", "mov", "wmv"]
+video = ["mkv", "mp4", "avi", "mov", "wmv", "gif"]
 
 
 doc = ["txt", "pdf", "odt", "doc", "docx", "xps", "rtf", "xml"]
@@ -41,7 +41,7 @@ trie(app, "Applications")
 restant = os.listdir()
 for c in restant:
     if os.path.isdir(c):
-        if not os.path.exists("Dossiers/"+c):
+        if not os.path.exists("Dossiers/"+c) and c not in nom_dossier:
             
             shutil.copytree(dirs_exist_ok=True, src=c, dst="Dossiers")
             try:
