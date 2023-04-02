@@ -36,3 +36,11 @@ trie(img, "Images")
 trie(video, "Vidéo")
 trie(doc, "Documents")
 trie(audio, "Audios")
+
+#Dossier :
+restant = os.listdir()
+for c in restant:
+    if os.path.isdir(c):
+        if not os.path.exists("Dossiers/"+c):
+            shutil.copytree(dirs_exist_ok=True, src=c, dst="Dossiers")
+            shutil.rmtree(c)
