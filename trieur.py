@@ -20,3 +20,14 @@ nom_dossier = ["Images", "Vidéo", "Documents", "Audios", "Dossiers"]
 for a in nom_dossier:
     if not os.path.exists(a):
         os.mkdir(a)
+
+
+def trie(format: list, dossier: str):
+    all = os.listdir()
+    for fichier in all:
+        if os.path.isfile(fichier):
+            ext = fichier.split(".")
+            if ext[len(ext)-1] in format:
+                if not os.path.exists(dossier+"/"+fichier):
+                    shutil.copyfile(fichier, dossier+"/"+fichier)
+                    os.remove(fichier)
