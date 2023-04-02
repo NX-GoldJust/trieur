@@ -14,7 +14,7 @@ doc = ["txt", "pdf", "odt", "doc", "docx", "xps", "rtf", "xml"]
 audio = ["mp3", "wav", "ogg", "wma", "mid", "acc", "flac", "alac", "aiff", "dsd"]
 
 
-nom_dossier = ["Images", "Vidéo", "Documents", "Audios", "Dossiers"]
+nom_dossier = ["Images", "Vidéo", "Documents", "Audios", "Dossiers", "Autres"]
 
 
 for a in nom_dossier:
@@ -44,3 +44,10 @@ for c in restant:
         if not os.path.exists("Dossiers/"+c):
             shutil.copytree(dirs_exist_ok=True, src=c, dst="Dossiers")
             shutil.rmtree(c)
+    else:
+        if not os.path.exists("Autres/"+c):
+            shutil.copyfile(c, "Autres")
+            os.remove(c)
+        
+
+
