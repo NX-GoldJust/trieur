@@ -12,9 +12,9 @@ doc = ["txt", "pdf", "odt", "doc", "docx", "xps", "rtf", "xml"]
 
 
 audio = ["mp3", "wav", "ogg", "wma", "mid", "acc", "flac", "alac", "aiff", "dsd"]
+app = ["exe"]
 
-
-nom_dossier = ["Images", "Vidéo", "Documents", "Audios", "Dossiers", "Autres"]
+nom_dossier = ["Images", "Vidéo", "Documents", "Audios", "Dossiers", "Autres", "Applications"]
 
 
 for a in nom_dossier:
@@ -36,7 +36,7 @@ trie(img, "Images")
 trie(video, "Vidéo")
 trie(doc, "Documents")
 trie(audio, "Audios")
-
+trie(app, "Applications")
 #Dossier :
 restant = os.listdir()
 for c in restant:
