@@ -42,8 +42,12 @@ restant = os.listdir()
 for c in restant:
     if os.path.isdir(c):
         if not os.path.exists("Dossiers/"+c):
+            
             shutil.copytree(dirs_exist_ok=True, src=c, dst="Dossiers")
-            shutil.rmtree(c)
+            try:
+                shutil.rmtree(c)
+            except:
+                pass
     else:
         if not os.path.exists("Autres/"+c):
             shutil.copyfile(c, "Autres")
