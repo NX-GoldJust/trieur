@@ -31,3 +31,8 @@ def trie(format: list, dossier: str):
                 if not os.path.exists(dossier+"/"+fichier):
                     shutil.copyfile(fichier, dossier+"/"+fichier)
                     os.remove(fichier)
+                    
+trie(img, "Images")
+trie(video, "Vidéo")
+trie(doc, "Documents")
+trie(audio, "Audios")
